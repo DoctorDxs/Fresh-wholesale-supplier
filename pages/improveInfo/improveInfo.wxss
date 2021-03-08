@@ -1,0 +1,101 @@
+/* pages/improveInfo/improveInfo.wxss */
+page {
+  background: #F8FAFC;
+  height: 100%;
+  padding-bottom: 160rpx;
+}
+
+.page {
+  padding: 30rpx;
+}
+
+.form {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 0 30rpx;
+}
+
+.form-item {
+  border-bottom: 1rpx solid #EEF0F5;
+  padding: 30rpx 30rpx;
+} 
+
+.form-item-title {
+  color: #131936;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.input-value {
+  height: 100%;
+  width: 100%;
+  line-height: 70rpx;
+}
+
+.input-value input {
+  height: 70rpx;
+}
+
+.date-icon {
+  width: 32rpx;
+  height: 32rpx;
+  flex-shrink: 0;
+}
+
+.require {
+  color: #278CFF;
+  margin-left: 6rpx;
+}
+
+.input-title {
+  color: #5A5D69;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+  width: 294rpx;
+  background: #F8FAFC;
+  border-radius: 8rpx;
+  padding: 0 24rpx;
+  margin-left: 16rpx;
+  justify-content: space-between;
+}
+
+.placeholder {
+  font-size: 24rpx;
+  color: #999FB1;
+}
+
+.unit {
+  margin-left: 24rpx;
+}
+
+.submit-btn {
+  line-height: 80rpx;
+  text-align: center;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40px;
+  color: #ffffff;
+  font-size: 30rpx;
+  margin-top: 80rpx;
+  position: fixed;
+  width: 690rpx;
+  bottom: 40rpx;
+  left: 30rpx;
+}
+
+.disabled-style {
+  opacity: .5;
+}
+
+
+
+

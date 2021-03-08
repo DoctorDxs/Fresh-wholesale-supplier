@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="content">
+    <view class="header">
+      <view class="header-title"> 申请供货商品</view>
+    </view>
+
+    <view class="product-items">
+      <view class="product-detail">
+        <image src="{{detail.main_pic}}"></image>
+        <view class="product-category">
+          <view class="product-name">{{detail.name}}</view>
+          <view class="category-detail">
+            <view><text wx:if="detail.category_p_name">{{detail.category_p_name}}></text>{{detail.category_name}}</view> <view>{{detail.unit_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="page">
+  <view class="form-item">
+    <text class="item-title" decode="{{true}}">库&emsp;&emsp;存:<text class="require">*</text></text>
+    <view class="item-value"><input type="number" bindblur="getStock" class="input-value" type="number" placeholder="请输入可供货商品库存" placeholder-class="placeholder" /><text class="limit-style overflow-ellipsis-1">{{detail.unit_name}}</text></view>
+  </view>
+  <view class="form-item">
+    <text class="item-title" decode="{{true}}">提货地点:<text class="require">*</text></text>
+    <view class="item-value"><input type="text" bindblur="getAddress" class="input-value"  placeholder="请输入提货地点" placeholder-class="placeholder" /></view>
+  </view>
+  <view class="form-item textarea-flex">
+    <text class="item-title" decode="{{true}}">备注描述:<text class="require">*</text></text>
+    <view class="item-value textarea-flex"><textarea class="input-value text-area" bindinput="getRemark"  placeholder="请输入备注描述" placeholder-class="placeholder" /><text class="word-limit"><text class="limit-style">{{formData.desc.length || 0}}<text class="limit-num">/200</text></text></text> </view>
+  </view>
+
+  <view class="form-item textarea-flex">
+    <text class="item-title" decode="{{true}}">资质附件:<text class="require"></text></text>
+    <view class="item-value">
+      <view class="img-box" >
+        <view wx:for="{{formData.qualification}}" wx:key="index" class="goods-pics">
+          <image src="{{item}}" class="product-img"></image>
+          <image  class="delete-img" src="../../assets/close.png" bindtap="deleteGoodsPic" data-index="{{index}}"></image>
+        </view>
+        <image class="product-img" src="../../assets/addgoods_content_botton_picture.png" bindtap="uploadQualificationImg" wx:if="{{ formData.qualification && formData.qualification.length < 3}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="delete-btn" bindtap="submit">保存并提交审核</view>
+</view>

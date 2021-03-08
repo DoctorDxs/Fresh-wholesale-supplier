@@ -1,0 +1,98 @@
+<view class="page">
+  <!-- tab -->
+  <view class="tab">
+    <view wx:for="{{tabs}}" wx:key="id" class="tab-item" bindtap="toggleTab" data-id="{{item.id}}">
+      <view class="tab-item-box {{item.id == tabId ? 'tab-active' : ''}}">
+        {{item.name}} 
+        <view class="border-bottom {{item.id == tabId ? 'border-bottom-active' : ''}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab-content">
+    <view class="category">
+      <view class="category-item {{categoryId == item.id ? 'tab-content-active' : ''}}" wx:for="{{categories}}" wx:key="index" bindtap="toggleCategory" data-id="{{item.id}}" data-index="{{index}}">
+        <view class="category-name"><view class="recommend" wx:if="{{index == 0}}">荐</view><view>{{item.name}}</view></view>
+        <view class="left-border {{item.id == categoryId ? 'border-left-active' : ''}}"></view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="category-content"  bindscrolltolower="getMore" >
+      <view class="category-products" wx:if="{{tabId == 2}}" bindtap="linkDetail" data-item="{{item}}" wx:for="{{categoriesContent}}" wx:key="index">
+        <image src="{{item.main_pic}}"></image>
+        <view class="product-info">
+          <view class="product-name">{{item.name}}</view>
+          <view class="product-state">
+            <view class="state">{{item.is_public == 1 ? '上架中' : '下架中'}}</view>
+            <view class="stock"><text>库存 </text> <text> {{item.offer_inventory}}{{item.unit_name}}</text></view>
+          </view>
+          <view class="product-price">
+            供货价<text> ￥{{item.offer_price / 100}} </text> <text class="unit">/{{item.unit_name}}</text>
+          </view>
+          <view class="product-updata">
+            <view class="updata-date">{{item.offer_price_set_at}}前更新</view>
+            <view class="updata-btn {{item.is_public == 1 ? 'can-updata' : 'can-not-updata' }}" catchtap="updataStock" data-item="{{item}}">更新报价库存</view>
+          </view>
+        </view>
+      </view>
+      <view class="category-products" wx:if="{{tabId == 1}}" bindtap="linkDetail" data-item="{{item}}" wx:for="{{categoriesContent}}" wx:key="index">
+        <image src="{{item.main_pic}}"></image>
+        <view class="product-info">
+          <view class="product-name">{{item.name}}</view>
+          <view class="product-state">
+            <view class="state">{{item.is_public == 1 ? '上架中' : '下架中'}}</view>
+          </view>
+          <view class="product-updata">
+            <view class="updata-date"></view>
+            <view class="updata-btn {{item.goods_supplier_state == 0 ? 'can-updata' : 'can-not-updata' }}" catchtap="applySupply" data-item="{{item}}">申请供货</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    
+  </view>
+
+
+
+
+
+  <view class="add-product" bindtap="addNew">
+    <image src="../../assets/luntan_content_botton_fatie.png"></image>
+  </view>
+</view>
+
+
+
+<view class="dialog-bg" bindtap="cancle" wx:if="{{updataDialog}}">
+  <view class="dialog-main" catchtap="stopFather">
+    <view class="dialog-header">更新库存报价</view>
+    <view class="dialog-content">
+      <view class="content-item">
+        <view class="item-title">上次更新:<text class="require"></text></view>
+        <view class="item-value">{{updataForm.price_set_at}}</view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">商品价格:<text class="require">*</text></view>
+        <view class="item-value"><input value="{{updataForm.price}}" type="digit" class="input-value" bindblur="getPrice" placeholder="请填写商品价格" placeholder-class="placeholder" /><text>元/kg</text></view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">商品库存:<text class="require">*</text></view>
+        <view class="item-value"><input type="digit" value="{{updataForm.inventory}}"  class="input-value" bindblur="getStock" placeholder="输入库存" placeholder-class="placeholder" /><text>kg</text></view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">售卖截至:<text class="require">*</text></view>
+        <view class="item-value">
+          <view class="input-value">
+            <date-picker placeholder = "{{placeholder}}" value="{{updataForm.stop_sale_date}}" class="input-value" bind:onPickerChange="onPickerChange" class="">
+            
+            </date-picker>
+          </view>
+      </view>
+      </view>
+    </view>
+    <view class="dialog-footer">
+      <view class="cancle" bindtap="cancle">取消</view>
+      <view class="confirm" bindtap="confirm">确认更新</view>
+    </view>
+  </view>
+</view>
+

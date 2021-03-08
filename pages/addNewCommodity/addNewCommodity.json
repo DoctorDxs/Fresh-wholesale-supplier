@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加新品供货",
+  "usingComponents": {
+    "image-cropper": "/components/image-corpper/image-corpper"
+  }
+}

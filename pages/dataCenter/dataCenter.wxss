@@ -1,0 +1,190 @@
+page {
+  background: #F4F5F9;
+}
+
+.page {
+  padding: 30rpx;
+  background: linear-gradient(0deg, #F4F5F9 0%, #278CFF 100%) no-repeat;
+  background-size: 100% 780rpx;
+  min-height: 780rpx;
+}
+
+.loan-info {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 32rpx 50rpx 40rpx;
+}
+
+.loan-title {
+  font-size: 26rpx;
+  color: #5A5D69;
+}
+
+.loan-total {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  border-bottom: 2rpx dashed #E9E9E9;
+  padding-bottom: 37rpx;
+}
+
+.loan-num {
+  font-size: 50rpx;
+  font-weight: 600;
+  color: #060C2B;
+}
+
+.loan-times {
+  width: 72rpx;
+  height: 42rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 21rpx 21rpx 21rpx 2rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-left: 27rpx;
+}
+
+.loan-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 36rpx;
+}
+
+.be-settled, .settled {
+  width: 100%;
+}
+
+.be-settled {
+  border-right: 2rpx dashed #E9E9E9;
+}
+
+.settle-title {
+  display: flex;
+  align-items: center;
+}
+
+.settle-state {
+  color: #5A5D69;
+  font-size: 26rpx;
+}
+
+.settle-detail {
+  width: 128rpx;
+  height: 40rpx;
+  background: rgba(254, 70, 31, .1);
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #FE461F;
+  margin-left: 36rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.settled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settle-money {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #060C2B;
+}
+
+.settle-times {
+  color: #060C2B;
+  font-size: 26rpx;
+  margin-left: 36rpx;
+}
+
+.settled-total {
+  display: flex;
+  align-items: center;
+  margin-top: 28rpx;
+}
+
+.list {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+  padding: 0 35rpx;
+}
+
+.list-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0;
+}
+
+.list-num {
+  font-size: 30rpx;
+  color: #060C2B;
+}
+
+.loan-item-money {
+  color: #222222;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+.item {
+  padding: 30rpx 0 40rpx;
+  border-top: 1rpx solid #E9E9E9;
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #5A5D69;
+}
+
+.item-money {
+  font-size: 32rpx;
+  color: #060C2B;
+  font-weight: 600;
+}
+
+.item-state {
+  
+  width: 104rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.item-settled {
+  background: rgba(0, 198, 87, .1);
+  color: rgba(0, 198, 87, 1);
+}
+
+.item-unsettled {
+  color: rgba(254, 70, 31, 1);
+  background: rgba(254, 70, 31, .1);
+}
+
+.item-date {
+  font-size: 24rpx;
+  color: rgba(153, 159, 177, 1);
+}
+
+.item-main, .item-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-secondary {
+  margin-top: 20rpx;
+}
+
+.self {
+  /* background: transparent; */
+  margin-top: 100rpx;
+}

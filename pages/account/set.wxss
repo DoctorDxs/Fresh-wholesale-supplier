@@ -1,0 +1,67 @@
+page {
+  background: #F6F7FA;
+}
+
+.page {
+  padding: 20rpx 30rpx 0;
+}
+
+.account-item-wrap {
+  padding: 0rpx 30rpx 0;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  height: 110rpx;
+  line-height: 110rpx;
+  justify-content: space-between;
+  border-bottom: 1px solid #F1F2F7;
+}
+
+.avatar {
+  height: 150rpx;
+}
+
+.avatar .user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.item-title {
+  color: #060C2B;
+  font-size: 30rpx;
+}
+
+.item-value {
+  color: #5A5D69;
+  font-size: 30rpx;
+}
+
+.icon-more {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.set-account {
+  margin-top: 20rpx;
+}
+
+.logout {
+  width: 690rpx;
+  height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 50rpx;
+  left: 30rpx;
+}

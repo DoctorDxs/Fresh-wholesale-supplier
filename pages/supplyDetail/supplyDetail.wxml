@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="content">
+    <view class="header">
+      <view class="header-title"><text class="border-left"></text> 申请供货商品</view>
+      <view class="state" wx:if="{{detail.state == 1}}">待审核</view>
+      <view class="state approving" wx:if="{{detail.state == 2}}">审核通过</view>
+      <view class="state disapprove" wx:if="{{detail.state == 3}}">审核未通过</view>
+    </view>
+
+    <view class="product-items">
+      <view class="product-detail">
+        <image src="{{detail.main_pic}}"></image>
+        <view class="product-category">
+          <view class="product-name">{{detail.name}}</view>
+          <view class="category-detail">
+            <view><text wx:if="detail.category_p_name">{{detail.category_p_name}}></text>{{detail.category_name}}</view> <view>{{detail.unit_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="product-items">
+      <view class="product-item"><text class="item-title" decode="{{true}}">库&emsp;&emsp;存</text><view class="item-value">{{detail.inventory}}{{detail.unit.name}}</view></view>
+      <view class="product-item mar-top"><view class="item-title">提货地点</view><view class="item-value">{{detail.address}}</view></view>
+    </view>
+    <view class="product-items">
+      <view class="product-item flex-start">
+        <view class="item-title">资质附件</view>
+        <view class="image-list">
+          <view class="img-box" wx:for="{{detail.qualification}}" wx:key="index">
+            <image class="product-img" src="{{item}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="product-items">
+      <view class="product-item"><view class="item-title">备注描述</view></view>
+      <view class="item-value mar-top40">{{detail.desc}}</view>
+    </view>
+    <view class="product-items">
+      <view class="product-item" wx:if="{{detail.check_at}}">
+        <view class="item-title font-size24" wx:if="{{detail.state != 1}}">{{detail.check_at}}</view>
+          <view class="item-value text-right" wx:if="{{detail.state != 1}}">{{ detail.state == 2 ? '审核通过' : '审核未通过'}}
+          <!-- <view class="disapprove-reason" wx:if="{{detail.state == 3}}">很抱歉您没有提供</view> -->
+      </view></view>
+      <view class="product-item mar-top"><view class="item-title font-size24">{{detail.created_at}}</view><view class="item-value">提交申请</view></view>
+    </view>
+  </view>
+
+  <view class="delete-btn" bindtap="delete" wx:if="{{detail.state == 3}}">删除</view>
+</view>
+
+<view class="dialog-bg" bindtap="cancle" wx:if="{{updataDialog}}">
+  <view class="dialog-main" catchtap="stopFather">
+    <view class="dialog-header">
+      <image src="../../assets/delete_content_icon_close.png" class="close-dialog" catchtap="cancle"></image>
+    </view>
+    <view class="dialog-content">
+      <view class="content-tips">是否确认删除？</view>
+    </view>
+    <view class="dialog-footer">
+      <view class="cancle" bindtap="cancle">取消</view>
+      <view class="confirm" bindtap="confirm">确定</view>
+    </view>
+  </view>
+</view>

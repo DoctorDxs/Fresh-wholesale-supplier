@@ -1,0 +1,31 @@
+/* pages/setPwd/setPwd.wxss */
+.page {
+  padding: 68rpx 30rpx 0;
+}
+
+.tip {
+  font-size: 24rpx;
+  color: #999FB1; 
+}
+
+.password-input {
+  height: 80rpx;
+  background: #F4F5F9;
+  border-radius: 40rpx;
+  margin-top: 30rpx;
+}
+
+.password-input input {
+  height: 100%;
+  margin: 0 36rpx;
+}
+
+.submit {
+  height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 100rpx;
+}

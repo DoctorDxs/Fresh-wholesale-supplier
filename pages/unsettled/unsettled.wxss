@@ -1,0 +1,115 @@
+/* pages/settled/settled.wxss */page {
+  background: #F4F5F9;
+}
+
+.page {
+  padding: 30rpx;
+  background: linear-gradient(0deg, #F4F5F9 0%, #278CFF 100%) no-repeat;
+  background-size: 100% 780rpx;
+  min-height: 780rpx;
+}
+
+
+
+.loan-times {
+  width: 72rpx;
+  height: 42rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 21rpx 21rpx 21rpx 2rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-left: 27rpx;
+}
+
+.list {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+  padding: 0 35rpx;
+  min-height: 800rpx;
+}
+
+.list-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0;
+}
+
+.list-num {
+  font-size: 30rpx;
+  color: #060C2B;
+  display: flex;
+  align-items: center;
+}
+
+.loan-item-money {
+  color: #222222;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+.item {
+  padding: 30rpx 0 40rpx;
+  border-top: 1rpx solid #E9E9E9;
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #5A5D69;
+}
+
+.item-money {
+  font-size: 32rpx;
+}
+
+.item-add {
+  
+  color: rgba(254, 70, 31, 1);
+}
+
+.item-reduce {
+  color: #060C2B;
+}
+
+.item-state {
+  width: 104rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.item-settled {
+  background: rgba(0, 198, 87, .1);
+  color: rgba(0, 198, 87, 1);
+}
+
+.item-unsettled {
+  color: rgba(254, 70, 31, 1);
+  background: rgba(254, 70, 31, .1);
+}
+
+.item-date {
+  font-size: 24rpx;
+  color: rgba(153, 159, 177, 1);
+}
+
+.item-main, .item-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-secondary {
+  margin-top: 20rpx;
+}
+
+.self {
+  /* background: transparent; */
+  margin-top: 100rpx;
+}

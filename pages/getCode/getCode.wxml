@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="phone">已发送验证码至 <text>{{phone}}</text></view>
+  <view class="code-wrap">
+    <view class="codes-list">
+      <view wx:for="{{6}}" bindtap="focusInput" class="code-item {{idx == inputIndex ? 'active' : ''}}" wx:for-index="idx" wx:key="idx">
+      {{codes[idx]}}
+      </view>
+    </view>
+  </view>
+  <input type="number" :hold-keyboard="true" bindconfirm="confirm"  bindinput="getCode"  focus="{{inputFocus}}" class="input-code" maxlength="6" />
+  <view class="resend" bindtap="resend">{{canGetCode ? '重新发送' : count + 'S'}}</view>
+</view>

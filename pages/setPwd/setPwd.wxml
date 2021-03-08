@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="tip">设置密码（请输入字母与数字的组合，6-12个字符）</view>
+  <view class="password-input"><input type="password" value="{{passsword}}" bindinput="getPassword" placeholder="请输入新密码" maxlength="12" /></view>
+  <view class="password-input"><input type="password" value="{{password1}}" bindinput="getPassword1" placeholder="再次输入新密码" maxlength="12" /></view>
+  <view class="submit" bindtap="submit">提交</view>
+</view>

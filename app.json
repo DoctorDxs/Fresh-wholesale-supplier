@@ -1,0 +1,68 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/message/list",
+    "pages/dataCenter/dataCenter",
+    "pages/settled/settled",
+    "pages/unsettled/unsettled",
+    "pages/purchase/order",
+    "pages/improveInfo/improveInfo",
+    "pages/purchaseDetail/purchaseDetail",
+    "pages/orderSheet/orderSheet",
+    "pages/commodity/commodity",
+    "pages/addNewCommodity/addNewCommodity",
+    "pages/supplyApplication/supplyApplication",
+    "pages/supplyDetail/supplyDetail",
+    "pages/supplyEdit/supplyEdit",
+    "pages/supplyProductDetail/supplyProductDetail",
+    "pages/my/my",
+    "pages/account/set",
+    "pages/pwdContor/pwdContor",
+    "pages/forget/password",
+    "pages/getCode/getCode",
+    "pages/setPwd/setPwd",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/agreement/agreement"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "日盛宝员工端",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999FB1",
+    "selectedColor": "#278CFF",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "工作台",
+        "iconPath": "/assets/tabbarIcon/home_footer_icon_default_work.png",
+        "selectedIconPath": "/assets/tabbarIcon/home_footer_icon_work.png"
+      },
+      {
+        "pagePath": "pages/purchase/order",
+        "text": "采购单",
+        "iconPath": "/assets/tabbarIcon/home_footer_icon_default_caigou.png",
+        "selectedIconPath": "/assets/tabbarIcon/home_footer_icon_caigou.png"
+      },
+      {
+        "pagePath": "pages/commodity/commodity",
+        "text": "商品",
+        "iconPath": "/assets/tabbarIcon/home_footer_icon_default_goods.png",
+        "selectedIconPath": "/assets/tabbarIcon/home_footer_icon_goods.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/assets/tabbarIcon/home_footer_icon_default_mine.png",
+        "selectedIconPath": "/assets/tabbarIcon/home_footer_icon_mine.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+  
+}

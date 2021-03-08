@@ -1,0 +1,72 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 64rpx 64rpx 84rpx;
+  background: #EFF5FF;
+}
+
+
+.avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #141C24;
+}
+
+.user-role {
+  position: relative;
+  margin-top: 25rpx;
+}
+
+.user-role image {
+  width: 144rpx;
+  height: 48rpx;
+}
+
+.role-name {
+  position: absolute;
+  color: #321E03;
+  font-size: 22rpx;
+  left: 60rpx;
+  top: 10rpx;
+}
+
+.my-items {
+  padding: 0 30rpx;
+  border-radius: 40rpx 40rpx 0 0;
+  margin-top: -20rpx;
+  background: #ffffff;
+}
+
+.my-item-icon {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.my-item {
+  justify-content: space-between;
+  border-top: 1px solid #EEF0F5;
+  height: 110rpx;
+}
+
+.more-icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.contact-btn {
+  width: 100%!important;
+  justify-content: space-between;
+  height: 100%;
+  
+}

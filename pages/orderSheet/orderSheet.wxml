@@ -1,0 +1,87 @@
+<!--pages/purchaseInfo/purchaseInfo.wxml-->
+<!-- 头部 -->
+<view class="purchase-info-header">
+  <view class="purchase-info-header-item">
+    <text>
+      <text>采购单状态：</text> 
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 1}}">备货中</text>
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 2 && purchaseState == 2}}">质检中</text>
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 3 && purchaseState == 3 }}">质检异常</text>
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 2 && purchaseState == 3 && detail.unusual_reason }}">质检异常（待重新质检）</text>
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 4}}">待提货</text>
+      <text style="font-size: 30rpx;" wx:if="{{detail.state == 5}}">已提货</text>
+    </text>
+  </view>
+  <view class="purchase-info-header-item">
+    <text>{{detail.purchase_delivery.driver.id}}号车：{{detail.purchase_delivery.driver.name}}</text>
+  </view>
+</view>
+<view class="quality-reason-box" wx:if="{{detail.unusual_reason}}">
+  <view class="quality-reason">
+    <view>原因：{{detail.unusual_reason}}</view>
+    <view class="quality-person">质检员：{{detail.purchase_delivery.qc.name}}</view>
+  </view>
+
+</view>
+
+<!-- 采购商品明细 -->
+<view class="purchase-order-info">
+  <view class="info-card-item-content-box" wx:for="{{detail.items}}" wx:key="index">
+        <text class="pro-title">{{item.name}}</text>
+        <view class="pro-price">
+          <view>
+            <text>¥<text class="big-font">{{item.price_supplier / 100}}</text>/{{item.unit}}</text>
+            <text class="pro-weight">x {{item.num}}{{item.unit}}</text>
+          </view>
+          <text class="sum-price">¥{{item.amount_supplier / 100}}</text>
+        </view>
+  </view>
+  <view class="purchase-order-info-sumary">
+      <view>
+        总价：
+      </view>
+      <text>¥ {{detail.total_amount / 100}}</text>
+  </view>
+</view>
+
+<!-- 采购单信息 -->
+<view class="purchase-order-info">
+  <view class="purchase-order-info-title no-border">采购单信息</view>
+  <view class="purchase-order-info-item">
+    <text>采购单编号</text>
+    <text>{{detail.wholesaler_purchase.sn}}</text>
+  </view>
+  <view class="purchase-order-info-item">
+    <text>下 单 时 间</text>
+    <text>{{detail.wholesaler_purchase.created_at}}</text>
+  </view>
+</view>
+<!-- 分捡单信息 -->
+<view class="purchase-order-info">
+  <view class="purchase-order-info-title no-border">分捡单信息</view>
+  <view class="purchase-order-info-item">
+    <text>分单单编号</text>
+    <text>{{detail.wholesaler_purchase.sn}}</text>
+  </view>
+  <view class="purchase-order-info-item" wx:if="{{detail.receive_at}}">
+    <text>接 单 时 间</text>
+    <text>{{detail.receive_at}}</text>
+  </view>
+  <view class="purchase-order-info-item" wx:if="{{detail.prepare_at}}">
+    <text>备 货 时 间</text>
+    <text>{{detail.prepare_at}}</text>
+  </view>
+  <view class="purchase-order-info-item" wx:if="{{detail.qc_at}}">
+    <text>质 检 异 常</text>
+    <text>{{detail.qc_at}}</text>
+  </view>
+  <view class="purchase-order-info-item" wx:if="{{detail.send_at}}">
+    <text>提 货 时 间</text>
+    <text>{{detail.send_at}}</text>
+  </view>
+</view>
+
+<view class="submit-btn-box">
+  <view class="submit-btn" bindtap="applyAgain" wx:if="{{detail.state == 3 && purchaseState == 3}}">重新提交</view>
+  <view class="submit-btn can-not"  wx:if="{{detail.state == 2 && purchaseState == 3 && detail.unusual_reason}}">重新提交</view>
+</view>

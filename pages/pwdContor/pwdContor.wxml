@@ -1,0 +1,7 @@
+<view class="page">
+  <view class="tip">为了保障您的账号安全，请在修改登录密码前填写原密码，请输入字母与数字的组合，6-12个字符）</view>
+  <view class="password-input"><input type="password" value="{{passsword}}" bindinput="getPasssword" placeholder="请输入密码" maxlength="12" /></view>
+  <view class="new-pwd-tip">新密码</view>
+  <view class="password-input"><input type="password" value="{{newPassword}}" bindinput="getnewPassword" placeholder="请输入新密码" maxlength="12" /></view>
+  <view class="submit" bindtap="submit">提交</view>
+</view>

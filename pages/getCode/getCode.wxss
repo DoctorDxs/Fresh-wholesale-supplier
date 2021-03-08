@@ -1,0 +1,54 @@
+/* pages/code/check.wxss */
+.page {
+  padding: 68rpx 60rpx 0;
+}
+
+.phone {
+  font-size: 30rpx;
+  color: #5A5D69;
+} 
+
+.phone text {
+  color: #278CFF;
+}
+
+.code-wrap {
+  margin-top: 152rpx;
+}
+
+.input-code {
+  /* width: 100%;
+  bottom: 3rpx;
+  height:100%;
+  font-size: 40rpx;
+  caret-color:#0186FE;
+  text-align: center; */
+  width: 0;
+  height: 0;
+}
+
+.codes-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.code-item {
+  width: 90rpx;
+  border-bottom: 3rpx solid #999FB1;
+  height: 90rpx;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.active {
+  border-color: #278CFF;
+}
+
+.resend {
+  text-align: right;
+  color: #278CFF;
+  font-size: 24rpx;
+  /* margin-top: 40rpx; */
+}

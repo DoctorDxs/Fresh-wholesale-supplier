@@ -1,0 +1,29 @@
+<view class="page">
+
+  <!-- title -->
+  <view class="title">日盛和生鲜批发平台</view>
+
+  <!-- logo -->
+  <view class="logo"><image src="../../assets/icon_gongyingshang_png@2x.png"></image></view>
+
+  <!-- login 原本打算使用form和button，button样式太难设置了，已放弃-->
+  <!-- 还是用回form吧，小程序竟然只支持单个input(model:value=)双向绑定，爱了爱了😒 -->
+  <!-- TODO  设计图页面太长了,将form向上移了一些,明天需要问下UI -->
+  <form class="login" bindsubmit="login">
+    <view class="login-input">
+      <input type="number" value="{{formData.phone}}" name="phone" maxlength="11" placeholder-class="login-placeholder" placeholder="请输入账号"/>
+    </view>
+    <view class="login-input password-input">
+      <input type="password" value="{{formData.password}}" name="password"  placeholder-class="login-placeholder" placeholder="请输入密码"/>
+    </view>
+    <view class="forget-password" bindtap="forgetPassword">忘记密码</view>
+    <view class="login-btns">
+      <button class="login-btn" formType="submit">登录</button>
+      <button class="login-register" bindtap="register">注册</button>
+    </view>
+  </form>
+
+  <!-- emial -->
+  <view class="email">合作邮箱： 1142006041@qq.com {{wx.$tet()}}</view>
+
+</view>

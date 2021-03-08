@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="account-item-wrap ">
+    <view class="account-item avatar">
+      <view class="item-title">头像</view>
+      <view class="user-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+    <view class="account-item">
+      <view class="item-title">主体</view>
+      <view class="item-value">{{memberInfo.name}}</view>
+    </view>
+
+    <view class="account-item">
+      <view class="item-title">当前账号</view>
+      <view class="item-value">{{memberInfo.phone}}</view>
+    </view>
+
+    <view class="account-item">
+      <view class="item-title">职位</view>
+      <view class="item-value">管理员</view>
+    </view>
+  </view>
+
+  
+  <view class="account-item-wrap set-account">
+    <view class="account-item" bindtap="pwdContor">
+      <view class="item-title">密码管理</view>
+      <image src="../../assets/center_content_icon_more.png" class="icon-more"></image>
+    </view>
+  </view>
+</view>
+
+
+<view class="logout" bindtap="logout">退出登录</view>

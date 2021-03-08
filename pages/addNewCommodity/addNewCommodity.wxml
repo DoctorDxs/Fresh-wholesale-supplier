@@ -1,0 +1,87 @@
+<view class="page {{coprperShopw ? 'page-hide' : ''}}">
+  <view>
+    <view class="product-img-list">
+      <view class="img-box" >
+        <view wx:for="{{formData.pics}}" wx:key="index" class="goods-pics">
+          <image src="{{item}}" class="product-img"></image>
+          <image  class="delete-img" src="../../assets/close.png" bindtap="deleteGoodsPic" data-index="{{index}}"></image>
+        </view>
+        <image class="product-img" src="../../assets/addgoods_content_botton_picture.png" bindtap="uploadImg" wx:if="{{ formData.pics && formData.pics.length < 3}}"></image>
+      </view>
+    </view>
+    <view class="uppload-tips">商品图片（1-3张）</view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="product-form">
+    <view class="form-item">
+      <text class="item-title">商品分类:<text class="require">*</text></text>
+      <view class="item-value"> 
+        <view class="input-value select-picker-box">
+          <picker class="select-category" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="pickerColumnChange" range="{{pickerArray}}" range-key="{{'name'}}">
+            <view class="{{selectedCategory ? '' : 'placeholder'}}">{{selectedCategory ? selectedCategory : '选择商品分类'}}</view>
+          </picker>
+          <image class="select-icon" src="../../assets/pinlei_content_icon_arrow.png"></image>
+        </view> 
+      </view>
+    </view>
+    <view class="form-item">
+      <text class="item-title">商品名称:<text class="require">*</text></text>
+      <view class="item-value"> <input type="text" bindinput="getGoodName" class="input-value" maxlength="30" placeholder="请填写商品名称" placeholder-class="placeholder" /> <text class="limit-style">{{formData.name.length || 0}}<text class="limit-num">/30</text></text></view>
+    </view>
+    <view class="form-item">
+      <text class="item-title">计价单位:<text class="require">*</text></text>
+      <view class="item-value"> 
+        <view class="input-value select-picker-box">
+          <picker class="select-category" bindchange="unitPickerChange" range="{{units}}" range-key="{{'name'}}">
+            <view class="{{unitName ? '' : 'placeholder'}}">{{unitName ? unitName : '选择计价单位'}}</view>
+          </picker>
+          <image class="select-icon" src="../../assets/pinlei_content_icon_arrow.png"></image>
+        </view> 
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="item-title"><text decode="{{true}}">库&ensp;&ensp;&ensp;&ensp;存:</text><text class="require">*</text></text>
+      <view class="item-value"> <input type="number" bindblur="getStock" class="input-value"  placeholder="请输入可供货商品库存" placeholder-class="placeholder" /> <text class="limit-style overflow-ellipsis-1" wx:if="{{unitName}}">/{{unitName}}</text></view>
+    </view>
+    <view class="form-item">
+      <text class="item-title" decode="{{true}}">提货地点:<text class="require">*</text></text>
+      <view class="item-value"><input type="text" bindblur="getAddress" class="input-value"  placeholder="请输入提货地点" placeholder-class="placeholder" /></view>
+    </view>
+    <view class="form-item textarea-flex">
+      <text class="item-title" decode="{{true}}">备注描述:<text class="require">*</text></text>
+      <view class="item-value textarea-flex"><textarea class="input-value text-area" bindinput="getRemark"  placeholder="请输入商品描述" maxlength="200" placeholder-class="placeholder" /><text class="word-limit"><text class="limit-style">{{formData.desc.length || 0}}<text class="limit-num">/200</text></text></text> </view>
+    </view>
+
+    <view class="form-item textarea-flex">
+      <text class="item-title" decode="{{true}}">资质附件:<text class="require"></text></text>
+      <view class="item-value">
+        <view class="img-box" >
+          <view wx:for="{{formData.qualification}}" wx:key="index" class="goods-pics">
+            <image src="{{item}}" class="product-img"></image>
+            <image  class="delete-img" src="../../assets/close.png" bindtap="deleteQualificationPic" data-index="{{index}}"></image>
+          </view>
+          <image class="product-img" src="../../assets/addgoods_content_botton_addpicture.png" bindtap="uploadQualificationImg" wx:if="{{ formData.qualification && formData.qualification.length < 3}}"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="submit-btn" bindtap="submit">保存并提交审核</view>
+  </view>
+</view>
+
+  <image-cropper wx:if="{{coprperShopw}}" id="image-cropper" 
+    limit_move="{{limit_move}}" 
+    disable_rotate="{{disable_rotate}}" 
+    width="{{width}}" height="{{height}}" 
+    imgSrc="{{src}}" angle="{{angle}}" 
+    disable_width="{{disable_width}}" 
+    max_width="{{max_width}}" max_height="{{max_height}}" 
+    disable_height="{{disable_height}}" 
+    disable_ratio="{{disable_ratio}}">
+  </image-cropper>
+  <view class="corpper-btns" wx:if="{{coprperShopw}}">
+    <view bindtap="cancleCorpper">取消</view>
+    <view class="confirm-corpper" bindtap="confirmCorpper">确认</view>
+  </view>

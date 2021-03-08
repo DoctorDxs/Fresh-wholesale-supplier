@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="loan-info">
+    <view class="loan-title">总货款</view>
+    <view class="loan-total"><text class="loan-num">{{data.total_amount || 0}}</text><text class="loan-times">{{data.total_count || 0}}笔</text></view>
+    <view class="loan-details">
+      <view class="be-settled" bindtap="unsettleDetail">
+        <view class="settle-title">
+          <text class="settle-state">待结算</text><text class="settle-detail" >查看明细</text>
+        </view>
+        <view class="settled-total">
+          <text class="settle-money">{{data.un_settled_amount || 0}}</text><text class="settle-times">{{data.un_settled_count || 0}}笔</text>
+        </view>
+      </view>
+      <view class="settled" bindtap="settledDetail">
+        <view>
+          <view class="settle-title" >
+            <text class="settle-state">已结算</text><text class="settle-detail" >查看明细</text>
+          </view>
+          <view class="settled-total">
+            <text class="settle-money">{{data.settled_amount || 0}}</text><text class="settle-times">{{data.settled_count || 0}}笔</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- loan list -->
+  <view class="list" wx:for="{{list}}" wx:key="index">
+    <view class="list-title">
+      <view class="list-num">货款<text class="loan-item-money">+{{item.total_amount}}</text></view>
+      <view class="list-date">{{item.time}}</view>
+    </view>
+    <view class="item" wx:for="{{item.data}}" wx:for-item="itemdata" wx:for-index="idx" wx:key="idx">
+      <view class="item-main">
+        <view class="item-title">采购单</view>
+        <view class="item-money">+{{itemdata.cost_total_price}}</view>
+      </view>
+      <view class="item-secondary">
+        <view class="item-date">{{itemdata.settle_at || itemdata.created_at}}</view>
+        <view class="item-state {{itemdata.settle_at ? '' : 'item-unsettled'}}">待结算</view>
+      </view>
+    </view>
+  </view>
+  <view class="no-data self" wx:if="{{!list.length}}">
+    <image src="../../assets/quesheng_content_img_two.png"></image>
+    <view class="no-data-text">暂无数据 ~</view>
+  </view>
+</view>
+
+

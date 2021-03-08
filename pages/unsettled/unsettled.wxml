@@ -1,0 +1,23 @@
+<view class="page">
+  <!-- loan list -->
+  <view class="list">
+    <view class="list-title">
+      <view class="list-num">待结算货款<text class="loan-item-money">+{{amount || 0}}</text><text class="loan-times">{{count || 0}}笔</text></view>
+    </view>
+    <view class="item" wx:for="{{list}}" wx:key="index" bindtap="linkDetail" data-id="{{item.id}}">
+      <view class="item-main">
+        <view class="item-title">采购单</view>
+        <view class="item-money">+{{item.cost_total_price || 0}}</view>
+      </view>
+      <view class="item-secondary">
+        <view class="item-date ">{{item.created_at}}</view>
+        <view class="item-state item-unsettled">待结算</view>
+      </view>
+    </view>
+    <view class="no-data self" wx:if="{{!list.length}}">
+      <image src="../../assets/quesheng_content_img_two.png"></image>
+      <view class="no-data-text">暂无数据 ~</view>
+    </view>
+  </view>
+
+</view>

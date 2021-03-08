@@ -1,0 +1,64 @@
+
+
+<!-- tab -->
+
+<view class="tab">
+  <view class="tab-item {{activeId==item.id?'active':''}}" wx:for="{{tabData}}" wx:key="id" bindtap="toggleTab" data-tab="{{item}}">
+    <text>{{item.name}}</text>
+    <view class="bottom-bar"></view>
+    <view wx:if="{{item.num}}" class="num-icon">{{item.num}}</view>
+  </view>
+</view>
+
+
+<!-- info -->
+
+<view class="info-card">
+  <view class="info-card-item" wx:for="{{list}}" wx:key="index" bindtap="linkOrderSheet" data-item="{{item}}">
+    <view class="info-card-item-title">
+      <text>编号：{{item.sn}}</text>
+      <text class="pink-style" wx:if="{{item.state == 1}}">待接单</text>
+      <text class="pink-style" wx:if="{{item.state == 2}}">备货中</text>
+      <text class="pink-style" wx:if="{{item.state == 3 && item.sortings_qc_fail_count == 0}}">质检中</text>
+      <text class="pink-style" wx:if="{{item.state == 3 && item.sortings_qc_fail_count != 0}}">质检异常</text>
+      <text class="pink-style" wx:if="{{item.state == 4}}">待提货</text>
+      <text class="pink-style" wx:if="{{item.state == 5}}">已提货</text>
+    </view>
+    <view class="info-card-item-content" >
+      <view class="info-card-item-content-box" wx:for="{{item.purchase_goods}}" wx:for-item="goods" wx:for-index="idx" wx:key="idx">
+        <text class="pro-title">{{goods.name}}</text>
+        <view class="pro-price">
+          <view>
+            <text>¥<text class="big-font">{{goods.avg_price / 100}}</text>/{{goods.unit}}</text>
+            <text class="pro-weight">x {{goods.num}}{{goods.unit}}</text>
+          </view>
+          <text class="sum-price">¥{{goods.amount_cost / 100}}</text>
+        </view>
+      </view>
+      
+      <view class="info-card-item-content-sumary">
+        <view>
+          <text wx:if="{{item.state != 1}}">分拣单 {{item.sortings_count}}</text>
+          <text class="mar-left" wx:if="{{item.state == 1}}"></text>
+          <text class="mar-left" wx:if="{{item.state == 2}}">已备货 {{item.sortings_qcing_count}}</text>
+          <text class="mar-left" wx:if="{{item.state == 3}}">质检异常 {{item.sortings_qc_fail_count}}</text>
+          <text class="mar-left" wx:if="{{item.state == 4}}">待提货 {{item.sortings_taking_count}}</text>
+          <text class="mar-left" wx:if="{{item.state == 5}}">已提货 {{item.sortings_taken_count}}</text>
+        </view>
+        <text class="total-amount">合计：¥<text class="spe-color">{{item.cost_total_price / 100}}</text></text>
+      </view>
+      <view class="last-item">
+        <view class="pick-up-goods">拟提货时间：{{item.proposed_delivery_at}}</view>
+        <view class="pick-up-order" wx:if="{{item.state == 1}}" catchtap="acceptOrder" data-item="{{item}}">接单</view>
+        <view class="pick-up-order" wx:if="{{item.state == 2}}" catchtap="stockUp" data-item="{{item}}">备货</view>
+        <view class="pick-up-order-detail" wx:if="{{item.state == 4 || item.state == 5 || (item.state == 3 && item.sortings_qc_fail_count == 0)}}" catchtap="linkOrderSheet" data-item="{{item}}">详情</view>
+        <view class="pick-up-order" wx:if="{{item.state == 3 && item.sortings_qc_fail_count != 0}}" catchtap="linkOrderSheet" data-item="{{item}}">处理异常</view>
+      </view>
+    </view>
+  </view> 
+</view>
+
+<view class="no-data calc-height" wx:if="{{!list.length}}">
+  <image src="../../assets/quesheng_content_img_two.png"></image>
+  <view class="no-data-text">暂无数据 ~</view>
+</view>

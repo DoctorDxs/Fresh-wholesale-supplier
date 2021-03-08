@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="form">
+    <view class="form-item" wx:for="{{formData}}" wx:key="index">
+      <view class="form-item-title">{{item.name}}</view>
+      <view class="input-item">
+        <view class="input-title">生产时间:<text class="require">*</text></view>
+        <view class="input-box">
+          <picker mode="date" disabled="{{purchaseState != 2}}" class="input-value {{purchaseState != 2 ? 'disabled-style' : ''}}" bindchange="bindDateChange"  data-index="{{index}}" data-item="{{item}}">
+            <view class="{{item.produced_at ? '' : 'placeholder'}}" style="width: 100%;height: 100%;">{{item.produced_at ? item.produced_at : '选择生产时间'}}</view>
+          </picker>
+          <image src="../../assets/home_content_icon_calendar_grey.png" class="date-icon"></image>
+        </view>
+      </view>
+      <view class="input-item">
+        <view class="input-title">商品产地:<text class="require">*</text></view>
+        <view class="input-box">
+          <view class="input-value {{purchaseState != 2 ? 'disabled-style' : ''}}"><input type="text" disabled="{{purchaseState != 2}}" value="{{item.product_place}}" bindblur="getAddress" data-index="{{index}}" data-item="{{item}}" placeholder-class="placeholder" placeholder="请填写商品产地" /></view>
+        </view>
+      </view>
+      <view class="input-item">
+        <text class="input-title" decode="{{true}}">保&ensp;质&ensp;期:<text class="require">*</text></text>
+        <view class="input-box">
+          <view class="input-value {{purchaseState != 2 ? 'disabled-style' : ''}}"><input type="number" disabled="{{purchaseState != 2}}" value="{{item.quality_days}}" bindblur="getQualityDays" data-index="{{index}}" data-item="{{item}}" placeholder-class="placeholder" placeholder="保质期" /></view>
+        </view>
+        <text class="unit">天</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="submit-btn" bindtap="stockUp" wx-if="{{purchaseState == 2}}">开始备货</view>

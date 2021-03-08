@@ -1,0 +1,7 @@
+<view class="page">
+  <view class="content">
+    <rich-text nodes="{{agreement.value}}" ></rich-text>
+  </view>
+
+  <view class="agree" bindtap="agree">同意并进入日盛宝</view>
+</view>

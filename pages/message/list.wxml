@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="all-read">
+    <view></view>
+    <view class="all-read-btn" bindtap="readAll">全部已读</view>
+  </view>
+
+
+  <view class="message-item" wx:for="{{list}}" wx:key="index" bindtap="readOne" data-item="{{item}}">
+    <view class="item-date"><view>{{item.created_at}}</view></view>
+    <view class="item-detail">
+      <view class="message-header">
+        <view class="message-title">系统消息</view>
+        <view class="message-info">
+          <view class="message-dito" wx:if="{{item.is_read == 0}}"></view>
+          <!-- <image src="../../assets/center_content_icon_more.png"></image> -->
+        </view>
+      </view>
+      <view class="message-desc">{{item.content}}</view>
+    </view>
+  </view>
+
+</view>

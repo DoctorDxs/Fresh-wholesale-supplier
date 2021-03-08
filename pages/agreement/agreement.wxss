@@ -1,0 +1,30 @@
+page {
+  background: #F4F5F9;
+}
+
+.page {
+  padding: 20rpx 30rpx;
+}
+
+.content {
+  background: #ffffff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  color: #060C2B;
+  font-size: 30rpx;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.agree {
+  position: fixed;
+  width: 690rpx;
+  line-height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 28rpx;
+  bottom: 30rpx;
+  margin-top: 80rpx;
+}

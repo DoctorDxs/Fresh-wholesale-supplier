@@ -1,0 +1,264 @@
+page {
+  background: #F4F5F9;
+}
+
+.page {
+  padding: 20rpx 30rpx;
+}
+
+.content {
+  padding: 0 30rpx;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.header {
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  color: #131936;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.border-left {
+  width: 4rpx;
+  height: 24rpx;
+  background: #278CFF;
+  border-radius: 2rpx;
+  margin-right: 18rpx;
+}
+
+.state {
+  font-size: 24rpx;
+  color: #278CFF;
+}
+
+.disapprove {
+  color: #FE461F;
+}
+
+.approving {
+  color: #00C657;
+} 
+
+.product-detail {
+  display: flex;
+  align-items: center;
+}
+
+.product-category {
+  width: 100%;
+
+}
+
+.product-detail image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+  flex-shrink: 0;
+}
+
+.product-name {
+  color: #131936;
+  font-weight: 600;
+  font-size: 28rpx;
+}
+
+.category-detail {
+  display: flex;
+  align-items: center;
+  color: #5A5D69;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  justify-content: space-between;
+}
+
+.product-items {
+  padding: 30rpx 0;
+  border-top: 1rpx solid #EEF0F5;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-title {
+  color: #5A5C69;
+  min-width: 120rpx;
+  flex-shrink: 0;
+}
+
+.item-value {
+  color: #141937;
+  font-size: 26rpx;
+}
+
+.mar-top {
+  margin-top: 20rpx;
+}
+
+.product-img {
+  width: 120rpx;
+  height: 120rpx;
+  background: #C7E9FF;
+  border-radius: 16rpx;
+}
+
+.image-list {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.img-box {
+  position: relative;
+  margin: 0 10rpx;
+}
+
+.mar-top40 {
+  margin-top: 40rpx;
+}
+
+.font-size24 {
+  font-size: 24rpx;
+}
+
+.disapprove-reason {
+  font-size: 24rpx;
+  color: #FE461F;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.delete-btn {
+  height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 32rpx;
+  width: 690rpx;
+}
+
+
+/* 更新库存报价 */
+.dialog-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-main {
+  width: 560rpx;
+  background: #ffffff;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+
+.dialog-header {
+  padding: 40rpx 0;
+  font: 30rpx;
+  color: #5A5D69;
+  text-align: center;
+}
+
+.dialog-content {
+  padding: 0 40rpx 62rpx;
+}
+
+.content-tips {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #131936;
+}
+
+.dialog-header {
+  position: relative;
+}
+
+.close-dialog {
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  top: 37rpx;
+  right: 37rpx;
+}
+
+
+.dialog-footer {
+  display: flex;
+  align-items: center;
+  height: 99rpx;
+  border-top: 1rpx solid #E9E9E9;
+  line-height: 99rpx;
+} 
+
+.dialog-footer view {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  height: 100%;
+}
+
+.cancle {
+  color: #5A5D69;
+}
+
+.confirm {
+  background: #278CFF;
+  color: #ffffff;
+}
+
+
+/* 删除 */
+.delete-application {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #5A5D69;
+} 
+
+.delete-application image {
+  width: 34rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.add-new-pro {
+  width: 690rpx;
+  line-height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  color: #ffffff;
+  text-align: center;
+  position: fixed;
+  bottom: 50rpx;
+  left: 30rpx;
+}
+
+

@@ -1,0 +1,94 @@
+<view class="header" wx:if="{{detail.goods_supplier_state == 2}}">
+  <view class="header-title flex-between">
+    <view class="title">{{detail.name}}</view>
+    <view class="state" wx:if="{{detail.is_public == 1}}">上架中</view>
+    <view class="state"  wx:if="{{detail.is_public == 2}}">下架中</view>
+  </view>
+  <view class="price-stock flex-between">
+    <view class="price"><text>价格</text><text class="price-num">￥{{detail.offer_price / 100}}</text><text class="price-unit">/{{detail.unit_name || 'kg'}}</text> </view>
+    <view class="stock">库存: <text> {{detail.offer_inventory || 0}}{{detail.unit_name || 'kg'}}</text></view>
+  </view>
+  <view class="date flex-between">
+    <view class="updata-date">{{detail.offer_price_set_at}}</view>
+    <view class="date-limit">销售截至: <text>2020-11-11 19:00</text></view>
+  </view>
+
+  <view class="address">提货地点: <text>{{detail.address}}</text></view>
+</view>
+
+<view class="header" wx:if="{{detail.goods_supplier_state != 2}}">
+  <view class="header-title flex-between">
+    <view class="name-category">
+      <image src="{{detail.main_pic}}" class="product-pic"></image>
+      <view >
+        <view class="title">{{detail.name}}</view>
+        <view class="category"><text wx:if="detail.category_p_name">{{detail.category_p_name}}></text>{{detail.category_name}}</view>
+      </view>
+    </view>
+    <view>
+      <view class="state" wx:if="{{detail.is_public == 1}}">上架中</view>
+      <view class="state"  wx:if="{{detail.is_public == 2}}">下架中</view>
+      <view class="category">{{detail.unit_name}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="hr"></view>
+
+<view class="detail">
+  <view class="detail-title">商品介绍</view>
+  <view class="product-desc"><rich-text nodes="{{detail.desc}}"></rich-text></view>
+</view>
+
+<view class="bottom-btn" wx:if="{{detail.is_public == 1}}">
+  <view class="submit-btn" wx:if="{{detail.goods_supplier_state == 2}}" catchtap="updataStock">更新库存报价</view>
+  <view class="submit-btn {{detail.goods_supplier_state == 1 ? 'can-not-applay' : ''}}" wx:if="{{detail.goods_supplier_state != 2}}" bindtap="apply">申请供货</view>
+</view>
+
+<view class="dialog-bg" bindtap="cancle" wx:if="{{updataDialog}}">
+  <view class="dialog-main" catchtap="stopFather">
+    <view class="dialog-header">更新库存报价</view>
+    <view class="dialog-content">
+      <view class="content-item">
+        <view class="item-title">上次更新:<text class="require"></text></view>
+        <view class="item-value">2020-11-11 18:00:00</view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">商品价格:<text class="require">*</text></view>
+        <!-- detail.unit_name || -->
+        <view class="item-value"><input type="digit" class="input-value" bindblur="getPrice" placeholder="请填写商品价格" placeholder-class="placeholder" /><text>元/{{ 'kg'}}</text></view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">商品库存:<text class="require">*</text></view>
+        <!-- detail.unit_name -->
+        <view class="item-value"><input type="digit"  class="input-value" bindblur="getStock" placeholder="输入库存" placeholder-class="placeholder" /><text>{{ 'kg'}}</text></view>
+      </view>
+      <view class="content-item">
+        <view class="item-title">售卖截至:<text class="require">*</text></view>
+        <view class="item-value">
+          <view class="input-value">
+            <date-picker placeholder = "{{placeholder}}" class="input-value" bind:onPickerChange="onPickerChange" class=""></date-picker>
+          </view>
+      </view>
+      </view>
+    </view>
+    <view class="dialog-footer">
+      <view class="cancle" bindtap="cancle">取消</view>
+      <view class="confirm" bindtap="confirm">确认更新</view>
+    </view>
+  </view>
+</view>
+
+<view class="dialog-bg" bindtap="cancleDiolog" wx:if="{{applyDialog}}">
+  <view class="dialog-main self-diolog" catchtap="stopFather">
+    <view class="dialog-header">
+      <image src="../../assets/delete_content_icon_close.png" class="close-dialog" catchtap="cancleDiolog"></image>
+    </view>
+    <view class="dialog-content">
+      <view class="content-tips">供货申请审核中</view>
+    </view>
+    <view class="dialog-footer self-footer">
+      <view class="confirm self-confirm" bindtap="cancleDiolog">确定</view>
+    </view>
+  </view>
+</view>

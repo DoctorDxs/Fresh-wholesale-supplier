@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="header">
+  <image src="../../assets/home_content_bg@2x.png"></image>
+  <view class="title-bar">
+    <text>{{memberInfo.name || ''}}</text>
+    <view class="message" bindtap="messageList">
+      <image src="../../assets/home_content_icon_message.png"></image>
+      <view class="num-icon message-num">{{dataCenter.message_unread_count || 0}}</view>
+    </view>
+  </view>
+  <view class="name-card" bindtap="dataCenter">
+    <view class="data-title" >
+      <text>经营数据</text><image src="../../assets/center_content_icon_more.png"></image>
+    </view>
+    <view class="data-total">
+      <view class="data-item">
+        <view class="data-num">{{dataCenter.wait_deal_count || 0}}</view>
+        <view class="data-item-title">待处理采购单</view>
+      </view>
+      <view class="data-item">
+        <view class="data-num">{{dataCenter.purchase_today_amount || 0}}</view>
+        <view class="data-item-title">今日货款</view>
+      </view>
+      <view class="data-item">
+        <view class="data-num">{{dataCenter.purchase_today_count || 0}}</view>
+        <view class="data-item-title">今日采购单数</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- nav -->
+<view class="nav">
+  <view class="nav-item" bindtap="purchase">
+    <image src="../../assets/home_content_icon_order.png"></image>
+    <view class="nav-title">订单管理</view>
+  </view>
+  <view class="nav-item" bindtap="commodity">
+    <image src="../../assets/home_content_icon_goods.png"></image>
+    <view class="nav-title">商品管理</view>
+  </view>
+  <view class="nav-item" bindtap="dataCenter">
+    <image src="../../assets/home_content_icon_data.png"></image>
+    <view class="nav-title">数据中心</view>
+  </view>
+</view>
+
+<!-- info -->
+
+<view class="info-card">
+  <view class="today-order">今日采购单</view>
+  <view class="info-card-item" wx:for="{{proposedGoods}}" wx:key="index">
+    <view class="info-card-item-title">
+      <text>编号：{{item.sn}}</text>
+      <text class="pink-style">待接单</text>
+    </view>
+    <view class="info-card-item-content">
+      <view class="info-card-item-content-box"  wx:for="{{item.purchase_goods}}" bindtap="linkDetail" data-item="{{item}}" wx:for-item="goods" wx:for-index="idx" wx:key="idx">
+        <text class="pro-title">{{goods.name}}</text>
+        <view class="pro-price">
+          <view>
+            <text>¥<text class="big-font">{{goods.avg_price / 100}}</text>/{{goods.unit}}</text>
+            <text class="pro-weight">x {{goods.num}}{{goods.unit}}</text>
+          </view>
+          <text class="sum-price">¥{{goods.amount_cost / 100}}</text>
+        </view>
+      </view>
+      <view class="info-card-item-content-sumary">
+        <view></view>
+        <text class="total-amount">合计：¥<text class="spe-color">{{item.cost_total_price / 100}}</text></text>
+      </view>
+      <view class="last-item">
+        <view class="pick-up-goods">拟提货时间：{{item.proposed_delivery_at}}</view>
+        <view class="pick-up-order" bindtap="acceptOrder" data-item="{{item}}">接单</view>
+      </view>
+    </view>
+  </view> 
+</view>
+
+<view class="no-data" wx:if="{{!proposedGoods.length}}">
+  <image src="../../assets/quesheng_content_img_two.png"></image>
+  <view class="no-data-text">暂无数据 ~</view>
+</view>

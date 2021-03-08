@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="title">日盛和生鲜批发平台</view>
+  <view class="logo"><image src="../../assets/icon_gongyingshang_png@2x.png"></image></view>
+  <form bindsubmit="regist">
+    <view class="input-box">
+      <view class="input-title"><text class="require-icon">*</text><text>企业名称：</text></view>
+      <view class="input-item"><input type="text" name="name" value="" placeholder-class="placeholder" placeholder="请输入企业名称，如张三百货" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>法定代表人：</text></view>
+      <view class="input-item"><input type="text" name="legal_name" value="" placeholder-class="placeholder" placeholder="请输入企业法人姓名" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>法人联系方式：</text></view>
+      <view class="input-item"><input type="number" maxlength="11" name="legal_phone" value="" placeholder-class="placeholder" placeholder="请输入企业法人手机号" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>注册地点：</text></view>
+      <view class="input-item"><input type="text" name="register_area" value="" placeholder-class="placeholder" placeholder="注册地点" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>机关办公地点：</text></view>
+      <view class="input-item"><input type="text" name="official_area" value="" placeholder-class="placeholder" placeholder="办公地点" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>生产销售地点：</text></view>
+      <view class="input-item"><input type="text" name="sale_area" value="" placeholder-class="placeholder" placeholder="生产销售地点" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>公司属性：</text></view>
+      <view class="input-item" bindtap="selectcompanyAttr"><view class="{{company_attribute ? '' : 'placeholder'}}"> {{company_attribute ? company_attribute : '选择公司属性'}}</view></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text>注册资金：</text></view>
+      <view class="input-item"><input type="text" name="register_amount" value="" placeholder-class="placeholder" placeholder="注册资金" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text class="require-icon">*</text><text>注册手机号：</text></view>
+      <view class="input-item"><input type="number" maxlength="11" bindblur="getPhone" name="phone" value="" placeholder-class="placeholder" placeholder="请输入手机号，注册后作为登陆账号" /></view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text class="require-icon">*</text><text>验证码：</text></view>
+      <view class="code-input">
+        <view class="input-item"><input type="number" maxlength="6" name="captcha" value="" placeholder-class="placeholder" placeholder="请输入验证码" /></view>
+        <view class="get-code" bindtap="getCode">{{canGetCode ? '获取验证码' : count + 'S'}}</view>
+      </view>
+    </view>
+
+    <view class="input-box">
+      <view class="input-title"><text class="require-icon">*</text><text>登录密码：</text></view>
+      <view class="input-item"><input type="text" name="password" value="" placeholder-class="placeholder" placeholder="请设置登陆密码" /></view>
+    </view>
+
+    
+
+    <view class="agree-agreement">
+      <!-- <image class="agree-icon" src="../../assets/no-select.png" wx:if="select"></image> -->
+      <image class="agree-icon" src="../../assets/selected.png" ></image>
+      <view class="link-aggreement">我已同意 <navigator url="/pages/agreement/agreement">《服务条款》</navigator></view>
+    </view>
+
+    <view class="register-btns"><button class="register-btn" formType="submit">注册并开通</button></view>
+  </form>
+</view>

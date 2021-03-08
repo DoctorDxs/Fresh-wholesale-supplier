@@ -1,0 +1,57 @@
+<view class="page">
+  <!-- tab -->
+  <view class="tab">
+    <view wx:for="{{tabs}}" wx:key="id" class="tab-item" bindtap="toggleTab" data-id="{{item.id}}">
+      <view class="tab-item-box {{item.id == tabId ? 'tab-active' : ''}}">
+        {{item.name}}<text class="tab-num" wx:if="{{item.num}}">{{item.num}}</text>
+        <view class="border-bottom {{item.id == tabId ? 'border-bottom-active' : ''}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab-content">
+    <view class="category">
+      <view class="category-item {{categoryId == item.id ? 'tab-content-active' : ''}}" wx:for="{{categories}}" wx:key="id" bindtap="toggleCategory" bindtap="toggleCategory" data-id="{{item.id}}" data-index="{{index}}">
+        <view class="category-name"><view class="recommend" wx:if="{{index == 0}}">荐</view><view>{{item.name}}</view></view>
+        <view class="left-border {{item.id == categoryId ? 'border-left-active' : ''}}"></view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="category-content"  bindscrolltolower="getMore" >
+      <view class="category-products" wx:for="{{categoriesContent}}" wx:key="index" bindtap="linkDetail" data-item="{{item}}" wx:key="index">
+        <image src="{{item.main_pic}}"></image>
+        <view class="product-info">
+          <view class="product-name">{{item.name}}</view>
+          <view class="product-state">
+            <view class="state warning" wx:if="{{tabId == 1}}">待审核</view>
+            <view class="state" wx:if="{{tabId == 2}}">审核通过</view>
+            <view class="state warning" wx:if="{{tabId == 3}}">审核未通过</view>
+          </view>
+          <view class="product-updata">
+            <view class="updata-date"> </view>
+            <view class="delete-application" catchtap="deleteApplication" data-item="{{item}}" wx:if="{{tabId == 3}}">
+              <image src="../../assets/delete .png"></image>删除
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </scroll-view>
+  </view>
+</view>
+
+<view class="dialog-bg" bindtap="cancle" wx:if="{{updataDialog}}">
+  <view class="dialog-main" catchtap="stopFather">
+    <view class="dialog-header">
+      <image src="../../assets/delete_content_icon_close.png" class="close-dialog" catchtap="cancle"></image>
+    </view>
+    <view class="dialog-content">
+      <view class="content-tips">是否确认删除？</view>
+    </view>
+    <view class="dialog-footer">
+      <view class="cancle" bindtap="cancle">取消</view>
+      <view class="confirm" bindtap="confirm">确定</view>
+    </view>
+  </view>
+</view>
+
+<view class="add-new-pro" bindtap="addNewPro">添加新商品</view>

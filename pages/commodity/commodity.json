@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品管理",
+  "usingComponents": {
+    "date-picker": "/components/date-picker/date-picker"
+  }
+}

@@ -1,0 +1,87 @@
+page {
+  background: #F4F5F9;
+}
+
+.page {
+  padding: 30rpx;
+}
+
+.all-read {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.all-read-btn {
+  width: 166rpx;
+  height: 60rpx;
+  background: #FFFFFF;
+  border: 1px solid #CCCED6;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #5A5D69;
+} 
+
+.item-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-date view{
+  height: 40rpx;
+  background: #DADCE4;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  line-height: 40rpx;
+}
+
+.item-detail {
+  padding: 0 30rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  margin: 20rpx 0 40rpx;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.message-title {
+  font-weight: bold;
+  color: #060C2B;
+  font-size: 32rpx;
+}
+
+.message-info {
+  display: flex;
+  align-items: center;
+}
+
+.message-dito {
+  width: 14rpx;
+  height: 14rpx;
+  background: #FE461F;
+  border-radius: 50%;
+  margin-right: 24rpx;
+}
+
+.message-info image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.message-desc {
+  font-size: 26rpx;
+  color: #5A5D69;
+  padding: 24rpx 0;
+}

@@ -1,0 +1,290 @@
+/* pages/purchaseInfo/purchaseInfo.wxss */
+page{
+  background: #F4F5F9;
+}
+/* 头部 */
+.purchase-info-header{
+  background: linear-gradient(270deg, #278CFF, #0EBCFC);
+  padding: 50rpx 30rpx 38rpx;
+}
+.purchase-info-header-item{
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  line-height: 30rpx;
+  align-items: center;
+}
+.purchase-info-header-item:first-of-type{
+  margin-bottom: 30rpx;
+}
+
+.purchase-title{
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #5A5D69;
+  line-height: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx 20rpx;
+}
+.purchase-title > text{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #131936;
+}
+
+.quality-reason-box {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+
+.quality-reason {
+  font-size: 24rpx;
+  color: #FE461F;
+  background: rgba(254, 70, 31, .1);
+  padding: 30rpx;
+  border-radius: 8rpx;
+}
+
+.quality-person {
+  margin-top: 24rpx;
+}
+
+
+
+/* 分检单 */
+.info-card{
+  margin: 0 30rpx;
+  box-sizing: border-box;
+}
+.info-card-item{
+  background: #FFFFFF;
+  border-radius: 14rpx;
+  /* padding: 0 30rpx; */
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.info-card-item-title{
+  display: flex;
+  height: 82rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  font-weight: 400;
+  padding: 0 30rpx;
+  color: #5A5D69;
+  border-bottom: 1px solid #EEF0F5;
+}
+.pink-style{
+  padding: 8rpx 28rpx;
+  border-radius: 20px;
+  background: rgba(254, 70, 31, 0.1);
+  color: #FE461F;
+  margin-left: 20rpx;
+}
+.info-card-item-content-box{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  padding: 30rpx;
+  border-bottom: 1px solid #EEF0F5;
+}
+.pro-title{
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #131936;
+  line-height: 30rpx;
+  margin-bottom: 32rpx;
+}
+.pro-price{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  color: #5A5D69;
+  line-height: 30rpx;
+  align-items: center;
+}
+.big-font{
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #131936;
+}
+.pro-weight{
+  margin-left: 48rpx;
+}
+.sum-price{
+  font-weight: 500;
+  color: #131936;
+  line-height: 30rpx;
+}
+
+.info-card-item-content-sumary{
+  display: flex;
+  padding: 36rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #5A5D69;
+  line-height: 30rpx;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #EEF0F5; */
+  align-items: center;
+}
+.mar-left{
+  margin-left: 40rpx;
+}
+.info-card-item-content-sumary > text:last-of-type{
+  line-height: 30rpx;
+  background: #ABB6C4;
+  border-radius: 32rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  padding: 18rpx 30rpx;
+}
+.spe-color{
+  font-weight: 500;
+  font-size: 30rpx;
+}
+.last-item{
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #5A5D69;
+  display: flex;
+  flex-direction: column;
+}
+.last-item-explain{
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #FE461F;
+  background: rgba(254, 70, 31, 0.1);
+  /* border-radius: 8px; */
+}
+.last-item-explain text{
+  margin-bottom: 20rpx;
+}
+.last-item-explain text:last-of-type{
+  margin-bottom: 0rpx;
+}
+.btns{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20rpx 0 30rpx;
+}
+.btns text{
+  width: 180rpx;
+  height: 64rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 32rpx;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-right: 30rpx;
+}
+
+/* 采购商品明细 */
+.purchase-order-info{
+  margin: 20rpx 30rpx 0;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 0 30rpx;
+}
+.purchase-order-info-title{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #131936;
+  line-height: 30rpx;
+  padding: 30rpx 0;
+  padding-left: 20rpx;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EEF0F5;
+}
+.purchase-order-info-title::before{
+  position: absolute;
+  left: 0;
+  top: 32rpx;
+  content: '';
+  width: 4rpx;
+  height: 25rpx;
+  background: #278CFF;
+  border-radius: 2rpx;
+}
+.purchase-order-info-title text:last-of-type{
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #278CFF;
+}
+
+.purchase-order-info .info-card-item-content-box{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #EEF0F5;
+}
+.purchase-order-info .info-card-item-content-box:last-of-type{
+  border: none;
+}
+.purchase-order-info .purchase-order-info-sumary{
+  display: flex;
+  padding: 36rpx 0;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  justify-content: space-between;
+  font-weight: 400;
+  color: #5A5D69;
+}
+.purchase-order-info-sumary > text{
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #FE461F;
+}
+
+.purchase-order-info-item{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #5A5D69;
+  line-height: 30rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.purchase-order-info-item text:first-of-type{
+  margin-right: 50rpx;
+  min-width: 130rpx;
+}
+.purchase-order-info:last-of-type{
+  margin-bottom: 20rpx;
+}
+.no-border{
+  border: none;
+}
+
+.submit-btn-box {
+  padding: 40rpx 30rpx;
+}
+.submit-btn-box .submit-btn {
+  height: 80rpx;
+  background: linear-gradient(270deg, #0EBCFC, #278CFF);
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #FFFFFF;
+  font-size: 30rpx;
+}
+
+.submit-btn-box .can-not {
+  background: rgba(171, 182, 196, 1);
+  color: #FFFFFF;
+}
